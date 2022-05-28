@@ -127,7 +127,7 @@ class Inferencer(ABC):
         pred_mask = cv2.resize(pred_mask, (image_width, image_height))
         boundaries = find_boundaries(pred_mask)
         outlines = dilation(boundaries, np.ones((7, 7)))
-        image[outlines] = [0, 0, 255]
+        image[outlines] = [255, 0, 0]
         return image
 
     def __call__(self, image: np.ndarray) -> Tuple[np.ndarray, float]:
