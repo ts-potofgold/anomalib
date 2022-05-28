@@ -38,7 +38,7 @@ def infer(
     anomaly_map, anomaly_score = inferencer.predict(image=image, superimpose=False)
     heat_map = superimpose_anomaly_map(anomaly_map, image)
     pred_mask = compute_mask(anomaly_map, threshold)
-    vis_img = mark_boundaries(image, pred_mask, color=(1, 0, 0), mode="thick")
+    vis_img = mark_boundaries(image, pred_mask, color=(0, 0, 1), mode="thick")
     return anomaly_map, anomaly_score, heat_map, pred_mask, vis_img
 
 
